@@ -1,11 +1,29 @@
-<!DOCTYPE html>
-    <html>
-    <head>
-        <title>Моя веб-страница</title>
-    </head>
-    <body>
-        <h1>Привет, мир! (/)</h1>
-        <p>Это моя первая простая веб-страница на GitHub. дадада</p>
-    </body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Разработка сайта sobolev-engineering</title>
+	<script>
+		// Простой роутинг для SPA
+		/*
+		function handleRouting() {
+			const path = window.location.pathname;
+			if(path === '/blog') {
+				import('/src/lib/pages/BlogPage.svelte').then(module => {
+					const app = document.getElementById('app');
+					app.innerHTML = '';
+					new module.default({ target: app });
+				});
+			}
+		}
+		window.addEventListener('popstate', handleRouting);
+		*/
+	</script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
-
