@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { loadComponentMarkdown } from './src/lib/js/util.js';
+	import { loadComponentMarkdown } from '/src/lib/js/util.js';
 	
 	let blogpost_list = [];
 	let project_list = [];
