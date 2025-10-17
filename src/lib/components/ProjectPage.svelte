@@ -3,7 +3,7 @@
 	let project_list = [];
 
 	onMount(async () => {
-		const response_project_list = await fetch('/src/lib/data/content_list.json');
+		const response_project_list = await fetch('./src/lib/data/content_list.json');
 		const data_project_list = await response_project_list.json();
 		project_list = data_project_list.projects;
 		document.title = 'Svelte Flex Layout - Проекты';

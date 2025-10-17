@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { loadComponentMarkdown } from '/src/lib/js/util.js';
+	import { loadComponentMarkdown } from './src/lib/js/util.js';
 	
 	let blogpost_list = [];
 	let project_list = [];
@@ -10,7 +10,7 @@
 	let markdown_content_prj_styloq = '';
 	
 	onMount(async () => {
-		const response_content_list = await fetch('/src/lib/data/content_list.json');
+		const response_content_list = await fetch('./src/lib/data/content_list.json');
 		const data_content_list = await response_content_list.json();
 		blogpost_list = data_content_list.posts;
 

@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { loadComponentMarkdown } from '/src/lib/js/util.js';
+	import { loadComponentMarkdown } from './src/lib/js/util.js';
 
 	export let postSlug = '';
 
@@ -13,7 +13,7 @@
 
 		//const posts = loadBlogPosts();
 		let blogpost_list = [];
-		const response_blogpost_list = await fetch('/src/lib/data/content_list.json');
+		const response_blogpost_list = await fetch('./src/lib/data/content_list.json');
 		const data_blogpost_list = await response_blogpost_list.json();
 		blogpost_list = data_blogpost_list.posts;
 

@@ -3,7 +3,7 @@
 	let blogpost_list = [];
 
 	onMount(async () => {
-		const response_blogpost_list = await fetch('/src/lib/data/content_list.json');
+		const response_blogpost_list = await fetch('./src/lib/data/content_list.json');
 		const data_blogpost_list = await response_blogpost_list.json();
 		blogpost_list = data_blogpost_list.posts;
 		document.title = 'Svelte Flex Layout - Блог';

@@ -45,22 +45,22 @@
 		// (переместил в index.html) document.title = 'Разработка сайта sobolev-engineering';
 
 		// Загружаем JSON напрямую
-		const response_structure = await fetch('/src/lib/data/structure.json');
+		const response_structure = await fetch('./src/lib/data/structure.json');
 		const data_structure = await response_structure.json();
 		//
-		//const response_features = await fetch('/src/lib/data/features.json');
+		//const response_features = await fetch('./src/lib/data/features.json');
 		//const data_features = await response_features.json();
 		features = data_structure.features;
 		//
-		//const response_header = await fetch('/src/lib/data/header_menu.json');
+		//const response_header = await fetch('./src/lib/data/header_menu.json');
 		//const data_header = await response_header.json();
 		header_menu = data_structure.header_menu;
 		//
-		//const response_sidebar = await fetch('/src/lib/data/sidebar_menu.json');
+		//const response_sidebar = await fetch('./src/lib/data/sidebar_menu.json');
 		//const data_sidebar = await response_sidebar.json();
 		sidebar_menu = data_structure.sidebar_menu;
 		//
-		const response_blogpost_list = await fetch('/src/lib/data/content_list.json');
+		const response_blogpost_list = await fetch('./src/lib/data/content_list.json');
 		const data_blogpost_list = await response_blogpost_list.json();
 		blogpost_list = data_blogpost_list.posts;
 		//
@@ -136,7 +136,7 @@
 						{#if isValidString(header_menu_item.image)}
 							<a href="{header_menu_item.ref}" class="nav-link">
 							<img 
-								src={`/src/lib/assets/images/${header_menu_item.image}`}
+								src={`./src/lib/assets/images/${header_menu_item.image}`}
 								alt={header_menu_item.title}
 								width="24"
 								height="24" 
@@ -188,7 +188,7 @@
 							{/if}
 							<p>{feature.description}</p>
 							{#if isValidString(feature.img)}
-								<img src="/src/lib/assets/images/{feature.img}"/>
+								<img src="./src/lib/assets/images/{feature.img}"/>
 							{/if}
 						</div>
 					{/each}

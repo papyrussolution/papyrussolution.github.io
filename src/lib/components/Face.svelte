@@ -16,7 +16,7 @@
 	height: 83vh; /* Важно: фиксированная высота окна */
 	
 	background-color: #DFDBE5;
-	background-image: url('/src/lib/assets/images/background03.jpg');
+	background-image: url('./src/lib/assets/images/background03.jpg');
 	background-size: 100% 100%;  
 	.internal-box {
 		display: flex;
