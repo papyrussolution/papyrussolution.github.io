@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { loadComponentMarkdown } from '/src/lib/js/util.js';
 
-	export let postSlug = '';
+	let { postSlug = '' } = $props();
 
 	let markdown_content = '';
 	let post = null;
