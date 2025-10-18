@@ -5,8 +5,14 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 export default defineConfig({
 	plugins: [svelte()],
 	base: './',
+	optimizeDeps: {
+		include: ['svelte']
+	},
 	build: {
-		target: 'esnext'
+		target: 'esnext',
+		commonjsOptions: {
+			include: [/svelte/, /node_modules/]
+		}
 	},
 	resolve: {
 		alias: {
