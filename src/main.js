@@ -1,4 +1,4 @@
-import { mount } from 'svelte'
+import { mount } from 'svelte/runtime'
 /*import './app.css'*/
 import './app.scss'
 import App from './App.svelte'
