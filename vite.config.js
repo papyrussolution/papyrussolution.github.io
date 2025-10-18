@@ -7,7 +7,7 @@ export default defineConfig({
 	base: './',
 	build: {
 		target: 'esnext'
-	}
+	},
 	resolve: {
 		alias: {
 			$assets: '/src/lib/assets',
