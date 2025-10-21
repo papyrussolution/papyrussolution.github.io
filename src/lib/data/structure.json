@@ -1,6 +1,11 @@
 {
 	"header_menu": [
 		{
+			"id": 3,
+			"title": "Main-test",
+			"ref": "/main"
+		},
+		{
 			"id": 4,
 			"title": "GitHub",
 			"ref": "https://github.com/papyrussolution",

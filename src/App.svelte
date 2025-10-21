@@ -9,14 +9,14 @@
 	import FacePage from './lib/components/Face.svelte';
 	import { onMount } from 'svelte';
 
-	let current_page = 'home'; // Для маршрутизации
-	let current_path = '/';    // Для маршрутизации
-	let extra_path_seg = '';   // Для маршрутизации (локация 2-го уровня пути e.g. '/blog/extra_path_seg') 
+	let current_page = $state('home'); // Для маршрутизации
+	let current_path = $state('/');    // Для маршрутизации
+	let extra_path_seg = $state('');   // Для маршрутизации (локация 2-го уровня пути e.g. '/blog/extra_path_seg') 
 
-	let features = [];
-	let header_menu = [];
-	let sidebar_menu = [];
-	let blogpost_list = [];
+	let features = $state([]);
+	let header_menu = $state([]);
+	let sidebar_menu = $state([]);
+	let blogpost_list = $state([]);
 
 	export const isValidString = (str) => {
 		return str != null && typeof str === 'string' && str.trim().length > 0;
@@ -44,23 +44,24 @@
 	onMount(async () => {
 		// (переместил в index.html) document.title = 'Разработка сайта sobolev-engineering';
 
-		// Загружаем JSON напрямую
-		const response_structure = await fetch('./src/lib/data/structure.json');
-		const data_structure = await response_structure.json();
-		//
-		//const response_features = await fetch('./src/lib/data/features.json');
-		//const data_features = await response_features.json();
+		let loading = true;
+		let response_structure = null;
+		let data_structure = null;
+		let response_blogpost_list = null;
+		try {
+			response_structure = await fetch('/src/lib/data/structure.json');
+			data_structure = await response_structure.json();
+			response_blogpost_list = await fetch('/src/lib/data/content_list.json');
+		} catch(error) {
+			console.error('Failed to load data:', error);
+		} finally {
+			loading = false;
+		}
+
 		features = data_structure.features;
-		//
-		//const response_header = await fetch('./src/lib/data/header_menu.json');
-		//const data_header = await response_header.json();
 		header_menu = data_structure.header_menu;
-		//
-		//const response_sidebar = await fetch('./src/lib/data/sidebar_menu.json');
-		//const data_sidebar = await response_sidebar.json();
 		sidebar_menu = data_structure.sidebar_menu;
 		//
-		const response_blogpost_list = await fetch('./src/lib/data/content_list.json');
 		const data_blogpost_list = await response_blogpost_list.json();
 		blogpost_list = data_blogpost_list.posts;
 		//

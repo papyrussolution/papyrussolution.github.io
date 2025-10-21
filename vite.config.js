@@ -17,7 +17,8 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			$assets: '/src/lib/assets',
-			$img: '/src/lib/assets/images'
+			$img: '/src/lib/assets/images',
+			$lib: './src/lib'
 		}
 	},
 })

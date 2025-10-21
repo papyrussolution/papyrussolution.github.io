@@ -2,21 +2,22 @@
 	import { onMount } from 'svelte';
 	import { loadComponentMarkdown } from '/src/lib/js/util.js';
 	
-	let blogpost_list = [];
-	let project_list = [];
+	let blogpost_list = $state([]);
+	let project_list = $state([]);
 
-	let markdown_content_about = '';
-	let markdown_content_prj_papyrus = '';
-	let markdown_content_prj_styloq = '';
+	let markdown_content_about = $state('');
+	let markdown_content_prj_papyrus = $state('');
+	let markdown_content_prj_styloq = $state('');
 	
 	onMount(async () => {
-		const response_content_list = await fetch('./src/lib/data/content_list.json');
+		const response_content_list = await fetch('/src/lib/data/content_list.json');
 		const data_content_list = await response_content_list.json();
-		blogpost_list = data_content_list.posts;
 
 		markdown_content_about = await loadComponentMarkdown('about-short');
 		markdown_content_prj_papyrus = await loadComponentMarkdown('prj-papyrus');
 		markdown_content_prj_styloq = await loadComponentMarkdown('prj-styloq');
+
+		blogpost_list = data_content_list.posts;
 
 		//document.title = 'Svelte Flex Layout - Блог';
 		blogpost_list.sort((a, b) => {

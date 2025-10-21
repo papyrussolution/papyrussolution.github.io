@@ -3,7 +3,7 @@ import { marked } from 'marked';
 
 export const loadComponentMarkdown = async (slug) => {
 	try {
-		const response = await fetch(`./src/lib/content/${slug}.md`);
+		const response = await fetch(`/src/lib/content/${slug}.md`);
 		if(!response.ok)
 			throw new Error('Post not found');
 		const markdown = await response.text();
