@@ -21,6 +21,9 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Generate .svelte-kit
+      run: npm run build -- --dry
+
     - name: build
       run: |
         npm run build
