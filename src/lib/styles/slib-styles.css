@@ -1,0 +1,19 @@
+/*
+	Обшие стили 
+*/
+/*
+	pallette:
+		ocean breeze
+		03045E
+		0077B6
+		00B4D8
+		90E0EF
+		CAF0F8
+*/
+:root {
+	--color-dark: #03045E;
+	--color-light: #CAF0F8;
+	--color-mdl01: #0077B6;
+	--color-mdl02: #00B4D8;
+	--color-mdl03: #90E0EF;
+}
